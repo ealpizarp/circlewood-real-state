@@ -7,33 +7,37 @@
             <div class="col-md-7 heading-section text-center ftco-animate">
                 <span class="subheading">Contact</span>
                 <h2 class="mb-4">Contact Us</h2>
-                <p>Behind the mountains of Costa Rica</p>
+                <p>Never leave a question without answer</p>
             </div>
             </div>
             <div class="row no-gutters block-9">
-            <div class="col-md-6 order-md-last d-flex">
-                <form action="#" class="bg-light p-5 contact-form">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Your Name">
+                <div class="col-md-6 order-md-last d-flex">
+                    <form action="" method="post" class="bg-light p-5 contact-form" action="{{ route('contact.store') }}">
+                        @csrf
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Your Name" id="name">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Your Email" id="email">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Subject" id="subject">
+                        </div>
+                        <div class="form-group">
+                            <textarea name="" id="message" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Send Message" class="btn btn-secondary py-3 px-5">
+                        </div>
+                    </form>
+                    
+                
                 </div>
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Your Email">
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Subject">
-                </div>
-                <div class="form-group">
-                    <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
-                </div>
-                <div class="form-group">
-                    <input type="submit" value="Send Message" class="btn btn-secondary py-3 px-5">
-                </div>
-                </form>
-            
-            </div>
 
-            <div class="col-md-6 d-flex">
-                <div id="map" class="bg-white"></div>
+                <div class="col-md-6 d-flex">
+                <div id="map" class="bg-white">
+                    
+                </div>
             </div>
             </div>
         </div>

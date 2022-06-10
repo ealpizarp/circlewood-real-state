@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ListingController;
+use App\Http\Controllers\MailController;
+use App\Http\Controllers\ContactUsFormController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +23,10 @@ use App\Http\Controllers\ListingController;
 // All Listings
 
 Route::get('/', [ListingController::class, 'index'])->name('/');
+//Route::post('/', [ContactUsFormController::class, 'ContactUsForm'])->name('contact.store');
+
+Route::get('/contact', [ContactUsFormController::class, 'createForm']);
+Route::post('/contact', [ContactUsFormController::class, 'ContactUsForm'])->name('contact.store');
 
 // Registered admin view
 
@@ -70,6 +76,8 @@ Route::get('/login', [UserController::class, 'login'])->name('login');
 
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
 
+// Send Email
+Route::get('/email',[MailController::class, 'sendMail']);
 
 Route::post('/comment/store', [CommentController::class, 'store'])->name('comment.add');
 
