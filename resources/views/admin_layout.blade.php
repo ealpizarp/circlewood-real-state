@@ -22,6 +22,7 @@
             },
         };
     </script>
+    <link rel="stylesheet" type="text/css" href="{{ asset('portal/css/style.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900" rel="stylesheet">
     <title>Real State App</title>
 </head>
@@ -33,18 +34,18 @@
         <ul class="flex space-x-6 mr-6 text-lg">
             @auth
             <li>
-                <span class="font-bold uppercase">
+                <span class="font-bold uppercase hover:text-cyan-600">
                     Welcome {{auth()->user()->name}}
                 </span>
             </li>
             <li>
-                <a href="/listings/manage" class="hover:text-laravel"><i class="fa-solid fa-gear"></i>
+                <a href="/listings/manage" class="hover:text-cyan-600"><i class="fa-solid fa-gear"></i>
                     Manage Listings</a>
             </li>
             <li>
                 <form action="/logout" class="inline" method="POST">
                 @csrf
-                <button type="submit">
+                <button class="hover:text-cyan-600" type="submit">
                     <i class="fa-solid fa-door-closed"></i> Logout
                 </button>
                 </form>
@@ -52,10 +53,10 @@
             @else
 
             <li>
-                <a href="/register" class="hover:text-laravel"><i class="fa-solid fa-user-plus"></i> Register</a>
+                <a href="/register" class="hover:text-cyan-600l"><i class="fa-solid fa-user-plus"></i> Register</a>
             </li>
             <li>
-                <a href="/login" class="hover:text-laravel"><i class="fa-solid fa-arrow-right-to-bracket"></i>
+                <a href="/login" class="hover:text-cyan-600l"><i class="fa-solid fa-arrow-right-to-bracket"></i>
                     Login</a>
             </li>
             @endauth

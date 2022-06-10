@@ -77,7 +77,7 @@
                                 {{Session::get('success')}}
                             </div>
                             @endif
-                            <form action="" class="bg-light p-5" method="post" action="{{ route('contact.store') }}">
+                            <form action="" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 p-5 border-slate-100" method="post" action="{{ route('contact.store') }}">
                                 @csrf
                                 <div class="form-group">
                                     <label>Name</label>
@@ -130,7 +130,7 @@
                                     </div>
                                     @endif
                                 </div>
-                                <input type="submit" name="send" value="Submit" class="btn btn-dark btn-block">
+                                <input type="submit" name="send" value="Submit" class="bg-cyan-700 hover:bg-cyan-600 text-white w-full font-bold py-2 px-4 rounded">
                             </form>
                         </div>
 

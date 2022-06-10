@@ -18,8 +18,9 @@ class ContactUsFormController extends Controller {
             'subject'=>'required',
             'message' => 'required'
          ]);
+         
         //  Send mail to admin
-        \Mail::send('mail', array(
+        Mail::send('mail', array(
             'name' => $request->get('name'),
             'email' => $request->get('email'),
             'phone' => $request->get('phone'),
