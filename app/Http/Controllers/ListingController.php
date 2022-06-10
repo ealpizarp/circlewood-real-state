@@ -13,7 +13,19 @@ class ListingController extends Controller
 
     public function index()
     {
-        return view('listings.index', [
+        return view('listings.guest_index', [
+            'listings' => Listing::Latest()->filter(
+                request(['tag', 'search'])
+            )
+                ->paginate(6)
+        ]);
+    }
+
+    
+
+    public function admin()
+    {
+        return view('listings.admin_index', [
             'listings' => Listing::Latest()->filter(
                 request(['tag', 'search'])
             )
@@ -51,9 +63,9 @@ class ListingController extends Controller
         if ($request->hasFile('image')) {
             $formFields['image'] = $request->file('image')->store('images', 'public');
         }
-        
+
         Listing::create($formFields);
-        
+
 
         return redirect('/')->with('message', 'Ad published succesfully!');
     }
@@ -64,7 +76,7 @@ class ListingController extends Controller
     {
         $formFields = $request->validate([
             'title' => 'required',
-            'price'=> 'required',
+            'price' => 'required',
             'seller' => 'required',
             'location' => 'required',
             'email' => ['required', 'email'],
@@ -75,24 +87,25 @@ class ListingController extends Controller
         if ($request->hasFile('image')) {
             $formFields['image'] = $request->file('image')->store('images', 'public');
         }
-        
+
         $listing->update($formFields);
-        
+
 
         return back()->with('message', 'Ad updated succesfully!');
     }
 
     //Show Edit Form
 
-    public function edit(Listing $listing) {
+    public function edit(Listing $listing)
+    {
         return view('listings.edit', ['listing' => $listing]);
     }
 
     // Delete Listing
 
-    public function destroy(Listing $listing) {
+    public function destroy(Listing $listing)
+    {
         $listing->delete();
         return redirect('/')->with('message', 'Listing deleted succesfully!');
     }
-
 }

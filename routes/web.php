@@ -19,12 +19,15 @@ use App\Http\Controllers\ListingController;
 
 // All Listings
 
-Route::get('/', [ListingController::class, 'index']);
+Route::get('/', [ListingController::class, 'index'])->name('/');
 
+// Registered admin view
+
+Route::get('/dashboard', [ListingController::class, 'admin'])->middleware(['auth', 'admin'])->name('dashboard');
 
 //Show create form
 
-Route::get('/listings/create', [ListingController::class, 'create'])->middleware('auth');
+Route::get('/listings/create', [ListingController::class, 'create'])->middleware(['auth', 'admin'])->name('create_listing');;
 
 // Single Listing
 
@@ -32,19 +35,19 @@ Route::get('/listings/{listing}', [ListingController::class, 'show']);
 
 //Store Listing data
 
-Route::post('/listings', [ListingController::class, 'store']);
+Route::post('/listings', [ListingController::class, 'store'])->middleware(['auth', 'admin'])->name('store_listing');;
 
 //Show Edit Form
 
-Route::get('/listings/{listing}/edit', [ListingController::class, 'edit'])->middleware('auth');
+Route::get('/listings/{listing}/edit', [ListingController::class, 'edit'])->middleware(['auth', 'admin'])->name('edit_listing');;
 
 // Update listing
 
-Route::put('/listings/{listing}', [ListingController::class, 'update']);
+Route::put('/listings/{listing}', [ListingController::class, 'update'])->middleware(['auth', 'admin'])->name('update_listing');;
 
 // Delete listing
 
-Route::delete('/listings/{listing}', [ListingController::class, 'destroy'])->middleware('auth');
+Route::delete('/listings/{listing}', [ListingController::class, 'destroy'])->middleware(['auth', 'admin'])->name('delete_listing');;
 
 // Show Register/Create Form
 
@@ -56,7 +59,7 @@ Route::post('/users', [UserController::class, 'store']);
 
 // Log user out
 
-Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');
+Route::post('/logout', [UserController::class, 'logout']);
 
 //Show login form
 
@@ -67,16 +70,3 @@ Route::get('/login', [UserController::class, 'login'])->name('login');
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
 
 
-// Route::get("/hello", function() {
-//     return response('<h1>Hello World</h1>', 200)
-//     ->header("Content-Type", 'text/plain');
-// });
-
-// Route::get('/posts/{id}', function($id) {
-//     ddd($id);
-//     return response('Post ' . $id);
-// })->where('id', '[0-9]+');
-
-// Route::get('/search', function(Request $request){
-//     return($request ->name . ' ' . $request->city);
-// });
