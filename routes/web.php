@@ -4,6 +4,7 @@ use App\Http\Controllers\ListingController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\Listing;
+use App\Http\Controllers\MailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,6 +45,9 @@ Route::put('/listings/{listing}', [ListingController::class, 'update']);
 // Delete listing
 
 Route::delete('/listings/{listing}', [ListingController::class, 'destroy']);
+
+// Send Email
+Route::get('/email',[MailController::class, 'sendMail']);
 
 // Route::get("/hello", function() {
 //     return response('<h1>Hello World</h1>', 200)
