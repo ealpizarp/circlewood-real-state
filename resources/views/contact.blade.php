@@ -48,10 +48,10 @@
         <a href="/"><img class="w-24 p-3" src={{ asset('images/app-logo.png') }} alt="" class="logo" /></a>
         <ul class="flex space-x-6 mr-6 text-lg">
             <li>
-                <a href="register" class="hover:text-laravel"><i class="fa-solid fa-user-plus"></i> Register</a>
+                <a href="register" class="hover:text-cyan-600 transition duration-300"><i class="fa-solid fa-user-plus"></i> Register</a>
             </li>
             <li>
-                <a href="login" class="hover:text-laravel"><i class="fa-solid fa-arrow-right-to-bracket"></i>
+                <a href="login" class="hover:text-cyan-600 transition duration-300"><i class="fa-solid fa-arrow-right-to-bracket"></i>
                     Login</a>
             </li>
         </ul>

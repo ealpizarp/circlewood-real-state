@@ -38,7 +38,15 @@ class ListingController extends Controller
     public function show(Listing $listing)
     {
 
-        return view('listings.show', [
+        return view('listings.guest_show', [
+            'listing' => $listing
+        ]);
+    }
+
+    public function show_admin(Listing $listing)
+    {
+
+        return view('listings.admin_show', [
             'listing' => $listing
         ]);
     }
@@ -67,7 +75,7 @@ class ListingController extends Controller
         Listing::create($formFields);
 
 
-        return redirect('/')->with('message', 'Ad published succesfully!');
+        return redirect('/dashboard')->with('message', 'Ad published succesfully!');
     }
 
     // Update listing data
@@ -106,6 +114,6 @@ class ListingController extends Controller
     public function destroy(Listing $listing)
     {
         $listing->delete();
-        return redirect('/')->with('message', 'Listing deleted succesfully!');
+        return redirect('/dashboard')->with('message', 'Listing deleted succesfully!');
     }
 }

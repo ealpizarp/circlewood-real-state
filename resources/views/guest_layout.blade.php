@@ -23,51 +23,39 @@
         };
     </script>
     <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('vendor/animate/animate.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('portal/css/open-iconic-bootstrap.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('portal/css/owl.carousel.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('portal/css/animate.css') }}">  
-    <link rel="stylesheet" type="text/css" href="{{ asset('portal/css/owl.carousel.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('portal/css/owl.theme.default.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('portal/css/magnific-popup.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('portal/css/aos.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('portal/css/ionicons.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('portal/css/flaticon.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('portal/css/icomoon.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('portal/css/style.css') }}">
-    <title>Real State App</title>
+
+    <title>Circlewood Real State</title>
 </head>
 
 <body class="mb-48">
-    <nav class="flex justify-between items-center mb-4">
+    <nav class="flex justify-between items-center">
         <a href="/"><img class="w-24 p-3" src={{ asset('images/app-logo.png') }} alt=""
                 class="logo" /></a>
         <ul class="flex space-x-6 mr-6 text-lg">
             @auth
             <li>
-                <span class="font-bold uppercase">
+                <span class="font-bold uppercase text-zinc-600 hover:text-cyan-600 transition duration-300">
                     Welcome {{auth()->user()->name}}
                 </span>
             </li>
             <li>
-                <form action="/logout" class="inline" method="POST">
+                <form action="/logout" class="inline text-zinc-600 hover:text-cyan-600 transition duration-300" method="POST">
                 @csrf
-                <button class="hover:text-cyan-600" type="submit">
+                <button class="hover:text-cyan-600 transition duration-300" type="submit">
                     <i class="fa-solid fa-door-closed "></i> Logout
                 </button>
                 </form>
             </li>
             @else
             <li>
-                <a href="/register" class="hover:text-cyan-600"><i class="fa-solid fa-user-plus"></i> Register</a>
+                <a href="/register" class=" text-zinc-600 hover:text-cyan-600 transition duration-300"><i class="fa-solid fa-user-plus"></i> Register</a>
             </li>
             <li>
-                <a href="/login" class="hover:text-cyan-600"><i class="fa-solid fa-arrow-right-to-bracket"></i>
+                <a href="/login" class="text-zinc-600 hover:text-cyan-600 transition duration-300"><i class="fa-solid fa-arrow-right-to-bracket"></i>
                     Login</a>
             </li>
             <li> 
-                <a href="/contact" class="hover:text-cyan-600"><i class="fa-solid fa-envelope"></i> Contact Us</a>
+                <a href="/contact" class="text-zinc-600 hover:text-cyan-600 transition duration-300"><i class="fa-solid fa-envelope"></i> Contact Us</a>
             </li>
             @endauth
         </ul>

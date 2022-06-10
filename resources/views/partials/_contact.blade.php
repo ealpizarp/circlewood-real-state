@@ -1,4 +1,7 @@
     {{-- Contact US --}}
+   
+    <link rel="stylesheet" type="text/css" href="{{ asset('portal/css/style.css') }}" />
+
 
     <section class="relative">
         <section class="ftco-section contact-section ftco-no-pb" data-section="contact">

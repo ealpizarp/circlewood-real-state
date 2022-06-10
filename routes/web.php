@@ -40,6 +40,9 @@ Route::get('/listings/create', [ListingController::class, 'create'])->middleware
 
 Route::get('/listings/{listing}', [ListingController::class, 'show']);
 
+
+Route::get('/listings/admin/{listing}', [ListingController::class, 'show_admin']);
+
 //Store Listing data
 
 Route::post('/listings', [ListingController::class, 'store'])->middleware(['auth', 'admin'])->name('store_listing');;

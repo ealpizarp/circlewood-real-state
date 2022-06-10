@@ -26,7 +26,7 @@
             <div class="mb-6">
                 <label for="title" class="inline-block text-lg mb-2">Ad Title</label>
                 <input type="text" class="border border-gray-200 rounded p-2 w-full" name="title"
-                    value="{{ old('title') }}" placeholder="Example: Senior Laravel Developer" />
+                    value="{{ old('title') }}" placeholder="Example: Beautiful house for rent />
 
                 @error('title')
                     <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
@@ -73,7 +73,7 @@
                     Tags (Comma Separated)
                 </label>
                 <input type="text" class="border border-gray-200 rounded p-2 w-full" name="tags"
-                    placeholder="Example: Laravel, Backend, Postgres, etc" value="{{ old('tags') }}" />
+                    placeholder="Example: 2 bedrooms, Air conditioning, Garage, etc.." value="{{ old('tags') }}" />
 
 
                 @error('tags')
@@ -109,11 +109,11 @@
 
 
             <div class="mb-6">
-                <button class="bg-laravel text-white rounded py-2 px-4 hover:bg-black">
+                <button class="bg-cyan-700 text-white rounded py-2 px-4 hover:bg-cyan-600 transition duration-300">
                     Publish Ad
                 </button>
 
-                <a href="/" class="text-black ml-4"> Back </a>
+                <a href="/dashboard" class="text-black ml-4"> Back </a>
             </div>
         </form>
     </x-card>
