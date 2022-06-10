@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('guest_layout')
 
 @section('content')
 @include('partials._search')

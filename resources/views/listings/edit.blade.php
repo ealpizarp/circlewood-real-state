@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('admin_layout')
 
 @section('content')
     <x-card class="p-10 max-w-lg mx-auto mt-24">
