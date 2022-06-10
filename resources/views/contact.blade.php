@@ -69,7 +69,7 @@
                     </div>
                 </div>
                 <div class="row no-gutters block-9">
-                    <div class="col-md-6 order-md-last d-flex">
+                    <div class="col-md-12 order-md-last d-flex">
                         <div class="container mt-5">
                             <!-- Success message -->
                             @if(Session::has('success'))
