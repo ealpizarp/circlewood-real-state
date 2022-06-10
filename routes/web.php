@@ -4,6 +4,7 @@ use App\Models\Listing;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ListingController;
 
 /*
@@ -68,5 +69,9 @@ Route::get('/login', [UserController::class, 'login'])->name('login');
 //Login User
 
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
+
+
+Route::post('/comment/store', [CommentController::class, 'store'])->name('comment.add');
+
 
 

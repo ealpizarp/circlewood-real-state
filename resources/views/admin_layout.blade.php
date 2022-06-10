@@ -28,7 +28,7 @@
 
 <body class="mb-48">
     <nav class="flex justify-between items-center mb-4">
-        <a href="/"><img class="w-24 p-3" src={{ asset('images/app-logo.png') }} alt=""
+        <a href="/dashboard"><img class="w-24 p-3" src={{ asset('images/app-logo.png') }} alt=""
                 class="logo" /></a>
         <ul class="flex space-x-6 mr-6 text-lg">
             @auth
